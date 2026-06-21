@@ -1,0 +1,30 @@
+/* ─────────────────────────────────────────
+   Design tokens — change colors/fonts here
+   ───────────────────────────────────────── */
+
+:root {
+  /* Colors */
+  --sky: #6BBFE0;
+  --sky-light: #A8D8EE;
+  --sky-dark: #4A9EC0;
+  --cream: #F5F0E8;
+  --black: #111111;
+  --white: #FFFFFF;
+  --pink: #F4A7B9;
+  --pink-light: #FDDDE6;
+
+  /* Typography */
+  --font-body: 'Nunito', sans-serif;
+
+  /* Borders */
+  --border: 2.5px solid var(--black);
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 50px;
+
+  /* Shadows */
+  --shadow-sm: 3px 3px 0 var(--black);
+  --shadow-md: 4px 4px 0 var(--black);
+  --shadow-lg: 6px 6px 0 var(--black);
+}

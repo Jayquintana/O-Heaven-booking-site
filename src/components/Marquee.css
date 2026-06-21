@@ -1,0 +1,32 @@
+.marquee-wrap {
+  background: var(--black);
+  border-top: var(--border);
+  border-bottom: var(--border);
+  padding: 14px 0;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.marquee-track {
+  display: inline-flex;
+  animation: marquee 20s linear infinite;
+}
+
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+.marquee-item {
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--cream);
+  padding: 0 0.75rem;
+}
+
+.marquee-dot {
+  color: var(--sky);
+  margin-left: 0.75rem;
+}

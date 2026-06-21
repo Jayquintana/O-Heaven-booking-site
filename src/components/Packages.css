@@ -1,0 +1,118 @@
+.pkg-section {
+  background: var(--sky);
+  border-bottom: var(--border);
+  padding: 5rem 2.5rem;
+}
+
+.pkg-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.pkg-eyebrow-label {
+  color: var(--black);
+  opacity: 0.45;
+}
+
+.pkg-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+/* Card */
+.pkg-card {
+  background: var(--cream);
+  border: var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1.75rem;
+  box-shadow: var(--shadow-md);
+  cursor: pointer;
+  transition: transform 0.1s, box-shadow 0.1s;
+}
+
+.pkg-card:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.pkg-card--featured {
+  background: var(--black);
+  color: var(--cream);
+}
+
+.pkg-number {
+  font-size: 3.5rem;
+  font-weight: 900;
+  line-height: 1;
+  color: rgba(0, 0, 0, 0.07);
+  margin-bottom: 0.25rem;
+}
+
+.pkg-card--featured .pkg-number {
+  color: rgba(255, 255, 255, 0.08);
+}
+
+.pkg-label {
+  font-size: 0.7rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--sky);
+  margin-bottom: 0.25rem;
+}
+
+.pkg-name {
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.5rem;
+  color: var(--black);
+}
+
+.pkg-card--featured .pkg-name {
+  color: var(--cream);
+}
+
+.pkg-desc {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #555;
+  margin-bottom: 1.25rem;
+}
+
+.pkg-card--featured .pkg-desc {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.pkg-features {
+  list-style: none;
+}
+
+.pkg-features li {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #333;
+  padding: 6px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.pkg-features li::before {
+  content: '✓';
+  font-weight: 900;
+  color: var(--sky);
+  flex-shrink: 0;
+}
+
+.pkg-card--featured .pkg-features li {
+  color: var(--cream);
+  border-color: rgba(255, 255, 255, 0.1);
+}
+
+@media (max-width: 640px) {
+  .pkg-section { padding: 3rem 1.25rem; }
+}

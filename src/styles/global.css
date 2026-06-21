@@ -1,0 +1,93 @@
+/* ─────────────────────────────────────────
+   Global reset & base styles
+   ───────────────────────────────────────── */
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;600;700;800;900&display=swap');
+@import './variables.css';
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background: var(--cream);
+  color: var(--black);
+  overflow-x: hidden;
+}
+
+/* Shared section styles */
+.section-eyebrow {
+  font-size: 0.75rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: var(--sky);
+  margin-bottom: 0.5rem;
+}
+
+.big-title {
+  font-size: clamp(2.5rem, 6vw, 4.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.95;
+  margin-bottom: 3rem;
+}
+
+/* Shared button styles */
+.btn-primary {
+  background: var(--black);
+  color: var(--cream);
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-pill);
+  border: var(--border);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.1s, box-shadow 0.1s, background 0.15s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-primary:hover {
+  background: var(--sky);
+  color: var(--black);
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+}
+
+.btn-sky {
+  background: var(--sky);
+  color: var(--black);
+  font-family: var(--font-body);
+  font-weight: 900;
+  font-size: 1rem;
+  padding: 0.875rem 2rem;
+  border-radius: var(--radius-pill);
+  border: var(--border);
+  cursor: pointer;
+  box-shadow: var(--shadow-md);
+  transition: transform 0.1s, box-shadow 0.1s;
+  text-decoration: none;
+  display: inline-block;
+}
+.btn-sky:hover {
+  transform: translate(2px, 2px);
+  box-shadow: var(--shadow-sm);
+}
+
+@media (max-width: 640px) {
+  .big-title {
+    font-size: 2.2rem;
+  }
+}

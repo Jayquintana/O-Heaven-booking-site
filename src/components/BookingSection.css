@@ -1,0 +1,13 @@
+.booking-section {
+  padding: 5rem 2.5rem;
+  border-bottom: var(--border);
+  background: var(--cream);
+}
+
+.booking-inner {
+  max-width: 680px;
+}
+
+@media (max-width: 640px) {
+  .booking-section { padding: 3rem 1.25rem; }
+}
