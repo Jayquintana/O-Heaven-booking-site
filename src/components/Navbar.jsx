@@ -1,4 +1,5 @@
 import './Navbar.css';
+import logo from '../assets/isolated heaven.png';
 
 export default function Navbar() {
   const scrollTo = (id) => {
@@ -13,19 +14,9 @@ export default function Navbar() {
       </div>
 
       <div className="nav-logo">
-        <img src="/logo.png" alt="O'Heaven Ice Cream" />
+        <img src={logo} alt="Isolated Heaven" />
       </div>
 
-      <div className="nav-right">
-        <a href="#book" onClick={(e) => { e.preventDefault(); scrollTo('book'); }}>Contact</a>
-        <a
-          href="#book"
-          className="nav-book-btn"
-          onClick={(e) => { e.preventDefault(); scrollTo('book'); }}
-        >
-          Book an event
-        </a>
-      </div>
     </nav>
   );
 }

@@ -56,7 +56,7 @@ export default function BookingForm({ selectedPackage, onPackageUsed }) {
       <div className="form-row">
         <div className="fg">
           <label htmlFor="fname">First name *</label>
-          <input id="fname" value={form.fname} onChange={set('fname')} placeholder="Jacob"
+          <input id="fname" value={form.fname} onChange={set('fname')} placeholder="John"
             className={errors.fname ? 'input-error' : ''} />
         </div>
         <div className="fg">

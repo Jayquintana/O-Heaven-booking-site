@@ -5,7 +5,6 @@ import './styles/global.css';
 
 // Components
 import TopBar from './components/TopBar';
-import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import Marquee from './components/Marquee';
 import Menu from './components/Menu';
@@ -20,7 +19,6 @@ export default function App() {
   return (
     <>
       <TopBar />
-      <Navbar />
       <Hero />
       <Marquee />
       <Menu />

@@ -1,9 +1,12 @@
 .topbar {
   background: var(--black);
-  padding: 8px 2rem;
+  padding: 4px 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
+  height: 60px;
+  position: relative;
+  overflow: visible;
 }
 
 .topbar-social,
@@ -28,6 +31,37 @@
   color: var(--sky);
 }
 
-@media (max-width: 640px) {
-  .topbar { display: none; }
+.topbar-logo {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 10;
 }
+
+.topbar-logo img {
+  height: 180px;
+  padding-top: 19px;
+  padding-bottom: 8px;
+  width: auto;
+  display: block;
+}
+
+@media (max-width: 640px) {
+  .topbar-logo img {
+    height: 75px;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .topbar-social,
+  .topbar-links {
+    gap: 0.75rem;
+  }
+
+  .topbar-social a,
+  .topbar-links a {
+    font-size: 0.65rem;
+  }
+}
+

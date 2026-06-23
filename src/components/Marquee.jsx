@@ -1,8 +1,11 @@
 import './Marquee.css';
 
 const ITEMS = [
-  'Mobile Ice Cream', 'Denver CO', 'Private Events', 'Birthday Parties',
-  'Corporate Events', 'Novelty Ice Cream', 'Book The Cart', "O'Heaven LLC",
+  'Private Events', 'Birthday Parties',
+  'Corporate Events', 'Farmers Markets', 'Quinceañeras',
+  'Graduation parties', 'Baby showers and gender reveals',
+  'Anniversary parties', 'Office appreciation days',
+  'Real estate open houses'
 ];
 
 export default function Marquee() {
