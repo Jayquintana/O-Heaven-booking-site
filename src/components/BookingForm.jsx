@@ -4,7 +4,7 @@ import './BookingForm.css';
 
 const INITIAL_FORM = {
   fname: '', lname: '', email: '', phone: '',
-  date: '', time: '', guests: '', eventType: '',
+  date: '', time: '', duration: '', guests: '', eventType: '',
   package: '', location: '', notes: '',
 };
 
@@ -32,14 +32,24 @@ export default function BookingForm({ selectedPackage, onPackageUsed }) {
     return Object.keys(errs).length === 0;
   };
 
+  const formatTime = (t) => {
+    if (!t) return t;
+    const [h, m] = t.split(':').map(Number);
+    const ampm = h >= 12 ? 'PM' : 'AM';
+    const hour = h % 12 || 12;
+    return `${hour}:${String(m).padStart(2, '0')} ${ampm}`;
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (!validate()) return;
 
+    const payload = { ...form, time: formatTime(form.time) };
+
     const res = await fetch('https://formspree.io/f/xqevenzv', {
       method: 'POST',
       headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-      body: JSON.stringify(form),
+      body: JSON.stringify(payload),
     });
 
     if (res.ok) setSubmitted(true);
@@ -57,11 +67,7 @@ export default function BookingForm({ selectedPackage, onPackageUsed }) {
 
   return (
     <form className="booking-form-card" onSubmit={handleSubmit} noValidate>
-      <div className="booking-deposit-strip">
-        🍦 A $100 deposit holds your date — balance due at the event.
-      </div>
-
-      <div className="form-row">
+<div className="form-row">
         <div className="fg">
           <label htmlFor="fname">First name *</label>
           <input id="fname" value={form.fname} onChange={set('fname')} placeholder="John"
@@ -88,6 +94,17 @@ export default function BookingForm({ selectedPackage, onPackageUsed }) {
         <div className="fg">
           <label htmlFor="time">Event time</label>
           <input id="time" type="time" value={form.time} onChange={set('time')} />
+        </div>
+        <div className="fg">
+          <label htmlFor="duration">Duration</label>
+          <select id="duration" value={form.duration} onChange={set('duration')}>
+            <option value="">Select duration...</option>
+            <option value="2 hours">2 hours (included)</option>
+            <option value="3 hours">3 hours</option>
+            <option value="4 hours">4 hours</option>
+            <option value="5 hours">5 hours</option>
+            <option value="6+ hours">6+ hours</option>
+          </select>
         </div>
         <div className="fg">
           <label htmlFor="guests">Expected guests</label>
@@ -129,7 +146,7 @@ export default function BookingForm({ selectedPackage, onPackageUsed }) {
       )}
 
       <button type="submit" className="booking-submit-btn">
-        Book The Cart — $100 Deposit To Confirm
+        Request Your Date
       </button>
     </form>
   );
