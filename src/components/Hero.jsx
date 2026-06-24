@@ -4,8 +4,10 @@ import './Hero.css';
 import slide1 from '../assets/hero images/170A6143.JPG';
 import slide2 from '../assets/hero images/170A6157.JPG';
 import slide3 from '../assets/hero images/Oheaven Ice Cream Cart.png';
+import slide4 from '../assets/hero images/170A6995.jpg' ;
+import slide5 from '../assets/hero images/170A6996.jpg' ;
 
-const SLIDES = [slide3, slide1, slide2];
+const SLIDES = [slide3, slide4, slide5, slide1, slide2];
 
 export default function Hero() {
   const [current, setCurrent] = useState(0);
