@@ -6,7 +6,7 @@ export default function BookingSection({ selectedPackage, onPackageUsed }) {
     <section className="booking-section" id="book">
       <div className="booking-inner">
         <p className="section-eyebrow">Let's do this</p>
-        <h2 className="big-title">Book The Cart.</h2>
+        <h2 className="big-title">Request a Booking</h2>
         <BookingForm
           selectedPackage={selectedPackage}
           onPackageUsed={onPackageUsed}
