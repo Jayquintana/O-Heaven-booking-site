@@ -32,9 +32,17 @@ export default function BookingForm({ selectedPackage, onPackageUsed }) {
     return Object.keys(errs).length === 0;
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    if (validate()) setSubmitted(true);
+    if (!validate()) return;
+
+    const res = await fetch('https://formspree.io/f/xqevenzv', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
+      body: JSON.stringify(form),
+    });
+
+    if (res.ok) setSubmitted(true);
   };
 
   if (submitted) {
